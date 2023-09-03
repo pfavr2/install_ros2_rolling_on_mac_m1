@@ -1,0 +1,10 @@
+--- ./src/ros2/rviz/rviz2/CMakeLists.txt        2023-08-20 09:41:18
++++ src/ros2/rviz/rviz2/CMakeLists.txt       2023-08-20 09:06:13
+@@ -18,6 +18,7 @@
+ 
+ find_package(rviz_ogre_vendor REQUIRED)
+ 
++include_directories(/opt/homebrew/Cellar/qt@5/5.15.10_1/include)
+ find_package(Qt5 REQUIRED COMPONENTS Widgets)
+ # TODO(wjwwood): this block is to setup the windeployqt tool, could be removed later.
+ if(Qt5_FOUND AND WIN32 AND TARGET Qt5::qmake AND NOT TARGET Qt5::windeployqt)

@@ -1,0 +1,10 @@
+--- ./src/ros2/rviz/rviz_default_plugins/CMakeLists.txt 2023-08-20 09:41:18
++++ src/ros2/rviz/rviz_default_plugins/CMakeLists.txt        2023-08-20 08:08:36
+@@ -57,6 +57,7 @@
+ find_package(rviz_rendering REQUIRED)
+ find_package(rviz_ogre_vendor REQUIRED)
+ 
++include_directories(/opt/homebrew/Cellar/qt@5/5.15.10_1/include)
+ find_package(Qt5 REQUIRED COMPONENTS Widgets Test)
+ 
+ find_package(geometry_msgs REQUIRED)

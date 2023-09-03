@@ -1,0 +1,10 @@
+--- ./src/PlotJuggle/CMakeLists.txt	2023-08-20 17:20:41
++++ src/PlotJuggler/CMakeLists.txt	2023-08-20 17:03:15
+@@ -27,6 +27,7 @@
+   set (CMAKE_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -fno-omit-frame-pointer -fsanitize=address")
+ endif()
+ 
++include_directories(/opt/homebrew/Cellar/qt@5/5.15.10/include)
+ include_directories( plotjuggler_base/include )
+ include_directories( plotjuggler_base/src )
+ 

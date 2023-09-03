@@ -1,0 +1,19 @@
+--- python_venv/lib/python3.11/site-packages/setuptools/command/install.py.orig	2023-06-19 08:33:53
++++ python_venv/lib/python3.11/site-packages/setuptools/command/install.py	2023-06-19 08:34:05
+@@ -31,11 +31,11 @@
+ 
+     def initialize_options(self):
+ 
+-        warnings.warn(
+-            "setup.py install is deprecated. "
+-            "Use build and pip and other standards-based tools.",
+-            setuptools.SetuptoolsDeprecationWarning,
+-        )
++#        warnings.warn(
++#            "setup.py install is deprecated. "
++#            "Use build and pip and other standards-based tools.",
++#            setuptools.SetuptoolsDeprecationWarning,
++#        )
+ 
+         orig.install.initialize_options(self)
+         self.old_and_unmanageable = None

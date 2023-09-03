@@ -1,0 +1,10 @@
+--- ./src/plotjuggler_ros/CMakeLists.txt	2023-08-20 17:21:01
++++ src/plotjuggler_ros/CMakeLists.txt	2023-08-20 17:17:37
+@@ -58,6 +58,7 @@
+ 
+ cmake_policy (SET CMP0020 NEW)
+ 
++include_directories(/opt/homebrew/Cellar/qt@5/5.15.10/include)
+ 
+ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+ set(CMAKE_AUTOMOC ON)

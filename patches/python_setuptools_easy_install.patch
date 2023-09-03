@@ -1,0 +1,19 @@
+--- python_venv/lib/python3.11/site-packages/setuptools/command/easy_install.py.orig	2023-06-19 08:32:13
++++ python_venv/lib/python3.11/site-packages/setuptools/command/easy_install.py	2023-06-19 08:32:41
+@@ -153,11 +153,11 @@
+     create_index = PackageIndex
+ 
+     def initialize_options(self):
+-        warnings.warn(
+-            "easy_install command is deprecated. "
+-            "Use build and pip and other standards-based tools.",
+-            EasyInstallDeprecationWarning,
+-        )
++#        warnings.warn(
++#            "easy_install command is deprecated. "
++#            "Use build and pip and other standards-based tools.",
++#            EasyInstallDeprecationWarning,
++#        )
+ 
+         # the --user option seems to be an opt-in one,
+         # so the default should be False.

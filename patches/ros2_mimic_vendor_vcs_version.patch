@@ -1,0 +1,13 @@
+--- ./src/ros2/mimick_vendor/CMakeLists.txt     2023-08-20 09:41:12
++++ src/ros2/mimick_vendor/CMakeLists.txt    2023-08-19 22:21:48
+@@ -6,7 +6,8 @@
+ 
+ ament_vendor(mimick_vendor
+   VCS_URL https://github.com/ros2/Mimick.git
+-  VCS_VERSION 6b08fa3fb91e490a8131903e4ea2480019854698
++#  VCS_VERSION 6b08fa3fb91e490a8131903e4ea2480019854698
++  VCS_VERSION 258ccb0a2c38a02d4e1f82357a3f7e40e9306a00
+ )
+ 
+ ament_export_dependencies(mimick)
+ 

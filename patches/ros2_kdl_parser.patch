@@ -1,0 +1,18 @@
+--- ../ros2/src/ros/kdl_parser/kdl_parser/CMakeLists.txt	2023-06-12 14:51:57
++++ src/ros/kdl_parser/kdl_parser/CMakeLists.txt	2023-06-11 18:52:33
+@@ -47,8 +47,15 @@
+   find_package(ament_cmake_gtest REQUIRED)
+ 
+   ament_add_gtest(test_inertia_rpy test/test_inertia_rpy.cpp)
++  target_include_directories(${PROJECT_NAME} PUBLIC
++    "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
++    /opt/homebrew/Cellar/orocos-kdl/1.5.1/include/
++    "$<INSTALL_INTERFACE:include/${PROJECT_NAME}>"
++  )
+   target_link_libraries(test_inertia_rpy ${PROJECT_NAME})
+ 
++
++
+   ament_add_gtest(test_kdl_parser test/test_kdl_parser.cpp)
+   target_link_libraries(test_kdl_parser ${PROJECT_NAME})
+ endif()

@@ -1,0 +1,29 @@
+--- PlotJuggler_orig/plotjuggler_plugins/ParserProtobuf/CMakeLists.txt	2023-07-07 11:55:49
++++ src/PlotJuggler/plotjuggler_plugins/ParserProtobuf/CMakeLists.txt	2023-07-06 22:36:16
+@@ -1,10 +1,12 @@
+ 
+ include_directories( ../ )
+ 
++set(ABSL_SPINLOCK_WAIT_LIB_PATH "/opt/homebrew/lib/libabsl_spinlock_wait.dylib")  
++
+ add_definitions(${QT_DEFINITIONS})
+ add_definitions(-DQT_PLUGIN)
+ 
+-find_package(Protobuf QUIET)
++find_package(Protobuf)
+ 
+ if( Protobuf_FOUND)
+     message(STATUS "[Protobuf] found")
+@@ -26,9 +28,10 @@
+         ${Qt5Xml_LIBRARIES}
+         ${Protobuf_LIBRARIES}
+         plotjuggler_base
+-        plotjuggler_qwt)
++        plotjuggler_qwt
++	"${ABSL_SPINLOCK_WAIT_LIB_PATH}")
+ 
+     install(TARGETS ProtobufParser DESTINATION ${PJ_PLUGIN_INSTALL_DIRECTORY}  )
+ else()
+-    message("[Protobuf] not found: skipping compilatiopn of plugin ProtobufParser")
++    message("[Protobuf] not found: skipping compilation of plugin ProtobufParser")
+ endif()
