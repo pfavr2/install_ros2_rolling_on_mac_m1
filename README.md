@@ -1,7 +1,9 @@
 # install_ros2_rolling_on_mac_m1
 Scripts and patches to install ros2_rolling on Mac M1
 
-XCode and HomeBrew should be installed before install.sh is run.
+XCode and HomeBrew should be installed before install.sh is run:
+
+> . ./install.sh
 
 It builds almost everything. Rviz2 is working also. No need to change Apple SIP (system integrity protection).
 
