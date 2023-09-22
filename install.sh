@@ -119,7 +119,7 @@ mkdir -p ros2_rolling/src
 cd ros2_rolling
 vcs import --input https://raw.githubusercontent.com/ros2/ros2/rolling/ros2.repos src
 
-colcon build --symlink-install  --cmake-args -DBUILD_TESTING=OFF --packages-skip-by-dep python_qt_binding --packages-up-to cyclonedds
+colcon build --symlink-install  --cmake-args -DBUILD_TESTING=OFF -Wno-dev --packages-skip-by-dep python_qt_binding --packages-up-to cyclonedds
 
 ln -s "../../iceoryx_posh/lib/libiceoryx_posh.dylib" install/iceoryx_binding_c/lib/libiceoryx_posh.dylib
 ln -s "../../iceoryx_hoofs/lib/libiceoryx_hoofs.dylib" install/iceoryx_binding_c/lib/libiceoryx_hoofs.dylib
@@ -135,7 +135,7 @@ patch < "$SCRIPT_DIR/patches/ros2_rviz_common_include_directories_qt5.15.10.patc
 patch < "$SCRIPT_DIR/patches/ros2_mimic_vendor_vcs_version.patch"
 patch < "$SCRIPT_DIR/patches/ros2_rviz2_include_directories_qt5.15.10.patch"
 
-colcon build --symlink-install --cmake-args -DBUILD_TESTING=OFF --packages-skip-by-dep python_qt_binding
+colcon build --symlink-install --cmake-args -DBUILD_TESTING=OFF -Wno-dev --packages-skip-by-dep python_qt_binding
 
 #colcon build \
 #  --symlink-install \
