@@ -154,7 +154,7 @@ cp "$SCRIPT_DIR/setenv.sh" "$ROS_INSTALL_ROOT/activate_ros"
 echo "Done."
 echo
 echo "To activate the new ROS2 distribution run the following command:"
-echo ". $ROS_INSTALL_ROOT/activate_ros"
+echo ". ${ROS_INSTALL_ROOT}activate_ros"
 echo
 echo "To deactivate this workspace, run:"
 echo "deactivate_ros"
