@@ -98,16 +98,10 @@ python3 -m pip install -U \
   nose pep8 psutil pydocstyle pydot pyparsing==2.4.7 \
   pytest-mock rosdep rosdistro setuptools==59.6.0 vcstool
 
-#(
-#  CFLAGS="-I/opt/homebrew/Cellar/graphviz/8.0.5/include"
-#  LDFLAGS="-L/opt/homebrew/Cellar/graphviz/8.0.5/lib"
-#  python3 -m pip install -U pygraphviz
-#)
-
 python3 -m pip install \
-  --global-option=build_ext \
-  --global-option="-I$(brew --prefix graphviz)/include/" \
-  --global-option="-L$(brew --prefix graphviz)/lib/" \
+  --config-settings="--global-option=build_ext" \
+  --config-settings="--global-option=-I/opt/homebrew/opt/graphviz/include/" \
+  --config-settings="--global-option=-L/opt/homebrew/opt/graphviz/lib/" \
     pygraphviz
 
 python3 -m pip install --upgrade pip
