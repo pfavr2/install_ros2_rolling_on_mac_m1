@@ -128,7 +128,8 @@ patch < "$SCRIPT_DIR/patches/ros2_rviz_default_plugins_include_directories_qt5.1
 patch < "$SCRIPT_DIR/patches/ros2_rviz_common_include_directories_qt5.15.10.patch"
 patch < "$SCRIPT_DIR/patches/ros2_mimic_vendor_vcs_version.patch"
 patch < "$SCRIPT_DIR/patches/ros2_rviz2_include_directories_qt5.15.10.patch"
-
+patch < "$SCRIPT_DIR/patches/ros2_kdl_parser_orocos-kdl_include_directories.patch"
+patch < "$SCRIPT_DIR/patches/ros2_rosbag2_transport_uint64_t.patch"
 colcon build --symlink-install --cmake-args -DBUILD_TESTING=OFF -Wno-dev --packages-skip-by-dep python_qt_binding
 
 #colcon build \

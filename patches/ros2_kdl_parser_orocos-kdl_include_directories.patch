@@ -1,0 +1,10 @@
+--- ../ros2/src/ros/kdl_parser/kdl_parser/CMakeLists.txt	2023-06-12 14:51:57
++++ src/ros/kdl_parser/kdl_parser/CMakeLists.txt	2023-12-21 12:52:33
+@@ -21,6 +21,7 @@ add_library(
+ target_include_directories(${PROJECT_NAME} PUBLIC
+   "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
+   "$<INSTALL_INTERFACE:include/${PROJECT_NAME}>"
++  "/opt/homebrew/Cellar/orocos-kdl/1.5.1/include/"
+ )
+ target_link_libraries(${PROJECT_NAME} PUBLIC
+   orocos-kdl
