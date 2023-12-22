@@ -1,6 +1,23 @@
 --- src/ros-foxglove-bridge-original/CMakeLists.txt	2023-06-28 22:43:58
 +++ src/ros-foxglove-bridge/CMakeLists.txt	2023-06-28 22:47:12
-@@ -80,6 +80,7 @@ target_include_directories(foxglove_bridge_base
+@@ -24,13 +24,15 @@
+ macro(enable_strict_compiler_warnings target)
+   endif()
+ endmacro()
+ 
++find_package(ament_index_cpp REQUIRED)
+ find_package(nlohmann_json QUIET)
+ find_package(OpenSSL REQUIRED)
+ find_package(Threads REQUIRED)
+ find_package(websocketpp REQUIRED)
+ find_package(ZLIB REQUIRED)
+ 
++
+ if(NOT CMAKE_BUILD_TYPE)
+   set(CMAKE_BUILD_TYPE RelWithDebInfo)
+ endif()
+@@ -80,12 +82,14 @@
+ target_include_directories(foxglove_bridge_base
    PUBLIC
      $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/foxglove_bridge_base/include>
      $<INSTALL_INTERFACE:include>
@@ -8,3 +25,9 @@
  )
  target_link_libraries(foxglove_bridge_base
    OpenSSL::Crypto
+   OpenSSL::SSL
+   ZLIB::ZLIB
++  ament_index_cpp::ament_index_cpp
+   ${CMAKE_THREAD_LIBS_INIT}
+ )
+ if(nlohmann_json_FOUND)
