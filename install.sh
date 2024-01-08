@@ -106,6 +106,17 @@ python3 -m pip install \
 
 python3 -m pip install --upgrade pip
 
+## Check if Python3.12 is installed (currently does not work):
+if brew list --formula | grep -q "python@3.12"; then 
+  echo "Python@3.12 is installed. Currently this does not work."
+  echo "Please uninstall using:"
+  echo
+  echo "brew uninstall --ignore-dependencies python@3.12"
+  echo
+  echo "then run ./clean.sh; ./install.sh"
+  exit(1)
+fi
+
 patch < "$SCRIPT_DIR/patches/python_setuptools_easy_install.patch"
 patch < "$SCRIPT_DIR/patches/python_setuptools_install.patch"
 
