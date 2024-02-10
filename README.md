@@ -1,6 +1,10 @@
 # install_ros2_rolling_on_mac_m1
 Scripts and patches to install ros2_rolling on Mac M1
 
+Confirmed to work on 2024-02-10 on MacOS Sonoma 14.3.1 (23D60).
+
+On Apple M2 Pro with 32GB RAM: 334 packages finished [14min 43s]
+
 ## HOW TO
 
 NOTE: XCode and HomeBrew should be installed before install.sh is run:
