@@ -107,7 +107,7 @@ python3 -m pip install \
 python3 -m pip install --upgrade pip
 
 ## Check if Python3.12 is installed (currently does not work):
-if brew list --formula | grep -q "python@3.12"; then 
+if brew list --formula | grep -q "python@3.12"; then
   echo "Python@3.12 is installed. Currently this does not work."
   echo "Please uninstall using:"
   echo
@@ -136,6 +136,7 @@ patch < "$SCRIPT_DIR/patches/ros2_rviz_ogre_vendor.patch"
 patch < "$SCRIPT_DIR/patches/ros2_rviz_default_plugins_include_directories.patch"
 patch < "$SCRIPT_DIR/patches/ros2_kdl_parser_orocos-kdl_include_directories.patch"
 patch < "$SCRIPT_DIR/patches/ros2_rosbag2_transport_uint64_t.patch"
+patch < "$SCRIPT_DIR/patches/ros2_point_cloud_transport_smartpointer.patch"
 
 ( cd ./src/ros2/orocos_kdl_vendor/python_orocos_kdl_vendor; git checkout 0.4.1 )
 
