@@ -72,7 +72,7 @@ fi
 ###################################
 brew install asio assimp bison bullet cmake console_bridge cppcheck \
   cunit eigen freetype graphviz opencv openssl orocos-kdl pcre poco \
-  pyqt5 python qt@5 sip spdlog tinyxml tinyxml2
+  pyqt5 python@3.11 qt@5 sip spdlog tinyxml tinyxml2
 
 # Setup paths
 export OPENSSL_ROOT_DIR=$(brew --prefix openssl@3)
@@ -85,7 +85,7 @@ export CMAKE_PREFIX_PATH=/opt/homebrew/opt:$CMAKE_PREFIX_PATH
 export COLCON_EXTENSION_BLOCKLIST=colcon_core.event_handler.desktop_notification
 
 # Make Python virtual environment
-python3 -m venv python_venv
+python3.11 -m venv python_venv
 
 source python_venv/bin/activate
 
@@ -136,7 +136,7 @@ patch < "$SCRIPT_DIR/patches/ros2_rviz_ogre_vendor.patch"
 patch < "$SCRIPT_DIR/patches/ros2_rviz_default_plugins_include_directories.patch"
 patch < "$SCRIPT_DIR/patches/ros2_kdl_parser_orocos-kdl_include_directories.patch"
 patch < "$SCRIPT_DIR/patches/ros2_rosbag2_transport_uint64_t.patch"
-patch < "$SCRIPT_DIR/patches/ros2_point_cloud_transport_smartpointer.patch"
+#patch < "$SCRIPT_DIR/patches/ros2_point_cloud_transport_smartpointer.patch"
 
 ( cd ./src/ros2/orocos_kdl_vendor/python_orocos_kdl_vendor; git checkout 0.4.1 )
 
